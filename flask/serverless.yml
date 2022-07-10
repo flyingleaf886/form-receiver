@@ -1,0 +1,19 @@
+component: http
+name: flaskDemo
+
+inputs:
+  src:
+    dist: ./
+    exclude:
+      - .env
+      - 'requirements/**'
+      - '__pycache__/**'
+  region: ap-guangzhou
+  faas:
+    framework: flask
+    name: ${name}
+    runtime: Python3.6
+  apigw:
+    protocols:
+      - http
+      - https
